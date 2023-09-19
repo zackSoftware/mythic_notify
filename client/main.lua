@@ -3,6 +3,10 @@ AddEventHandler("mythic_notify:client:SendAlert", function(data)
 	DoHudText(data.type, data.text)
 end)
 
+function SendAlert(type, text, length)
+	DoCustomHudText(type, text, length)
+end
+
 function DoShortHudText(type, text)
 	SendNUIMessage({
 		action = 'shortnotif',
@@ -35,3 +39,4 @@ function DoCustomHudText(type, text, length)
 		length = length
 	})
 end
+
